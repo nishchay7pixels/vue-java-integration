@@ -3,14 +3,41 @@ It is an Vue application with a Java backend, frontend in vue.js and a custom vu
 
 Let’s build the Vue side first.
 
-## yarn build
+## What you will need
+JDK 14 or later (This tutorial uses Java Record classes)
+Maven 3.2+
+Node.js 12+, with npm, yarn, vue-cli installed
+
+## Project Layout
+```
+.gitignore
+.babelrc
+package.json
+yarn.lock
+pom.xml
+vue.config.js
+src/
+  main/
+    java/         ( Java API code will be here )
+    javascript/   ( Vue.JS components will be here )
+      components/ ( Vue JS components )
+      assets/     ( Assets including images and stylesheets )
+    resources/
+      assets/     ( Other assets required for our application )
+      templates/  ( Html templates for our application )
+      public/     ( The webpack build will place the JavaScript and other assets here)
+test/             ( Test code )
+  ...
+
+```
+## yarn or npm build - For Front-end
 This will result in the public directory being created in the src/main/resources/ directory, which will be served by our Spark Java application.
 
 Next we have to build the Java backend itself. We will build an uber jar or fat jar, as others call them. This is basically a file with all your application dependencies bundled into one .jar and with the jar’s main-class configured in the MANIFEST file.
 
 Run the following command: "yarn build" or "npm run build" for NPM
 
-## mvn clean package
+## mvn clean package - For Back-end
 If this executes successfully, it will result in jar files in the target directory named something like spark-vue-0.1.0-SNAPSHOT.jar and spark-vue-0.1.0-SNAPSHOT-original.jar.
 
 Our uber jar is the one without the -original suffix. Next run this in your command line to start the server:
