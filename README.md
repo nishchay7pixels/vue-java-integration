@@ -1,12 +1,10 @@
 # vue-java-integration
 It is an Vue application with a Java backend, frontend in vue.js and a custom vue-cli configuration.  It is my attempt to learn how to combine a VueJS front-end with a Java backend
 
-
-
 ## What you will need
-JDK 14 or later (This tutorial uses Java Record classes)
-Maven 3.2+
-Node.js 12+, with npm, yarn, vue-cli installed
+1. [JDK 14 or later]
+2. [Maven 3.2+]
+3. [Node.js 12+, with npm, yarn, vue-cli installed]
 
 ## Project Layout
 ```
