@@ -32,8 +32,30 @@ Congratulations, it’s running!! Open your browser and visit http://localhost:4
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-##Run VUE build together with Maven build
+## Run VUE build together with Maven build
 As you can see, we had to first build our Vue app with yarn build and then our Java code with mvn package, while it’s just two commands it is easy to forget to build the front-end before the backend. We can solve this using the exec-maven-plugin which allows us to run arbitrary commands during a maven build.
+```
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+    <version>1.3.2</version>
+    <executions>
+        <execution>
+            <phase>prepare-package</phase>
+            <goals>
+                <goal>exec</goal>
+            </goals>
+            <configuration>
+                <executable>yarn</executable>
+                <commandlineArgs>build</commandlineArgs>
+                <environmentVariables>
+                    <environment>production</environment>
+                </environmentVariables>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+```
 Add the following plugin configuration to your pom.xml file.
 
 Now all you have to do is run mvn clean package to build both the Vue and Java code together.
