@@ -1,7 +1,7 @@
 # vue-java-integration
 It is an Vue application with a Java backend, frontend in vue.js and a custom vue-cli configuration.  It is my attempt to learn how to combine a VueJS front-end with a Java backend
 
-Let’s build the Vue side first.
+
 
 ## What you will need
 JDK 14 or later (This tutorial uses Java Record classes)
@@ -30,6 +30,7 @@ test/             ( Test code )
   ...
 
 ```
+Let’s build the Vue side first.
 ## yarn or npm build - For Front-end
 This will result in the public directory being created in the src/main/resources/ directory, which will be served by our Spark Java application.
 
