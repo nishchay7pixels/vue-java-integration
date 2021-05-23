@@ -8,7 +8,7 @@ This will result in the public directory being created in the src/main/resources
 
 Next we have to build the Java backend itself. We will build an uber jar or fat jar, as others call them. This is basically a file with all your application dependencies bundled into one .jar and with the jar’s main-class configured in the MANIFEST file.
 
-Run the following command:
+Run the following command: "yarn build" or "npm run build" for NPM
 
 ## mvn clean package
 If this executes successfully, it will result in jar files in the target directory named something like spark-vue-0.1.0-SNAPSHOT.jar and spark-vue-0.1.0-SNAPSHOT-original.jar.
